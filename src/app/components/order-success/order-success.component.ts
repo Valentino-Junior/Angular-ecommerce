@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-success',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./order-success.component.css']
 })
 export class OrderSuccessComponent {
+  constructor(private router: Router) {}
 
+  goToHome(): void {
+    this.router.navigate(['/']);
+  }
 }
