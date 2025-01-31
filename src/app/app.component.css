@@ -1,0 +1,125 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .navbar-brand .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-left: 1rem;
+  }
+  
+  .nav-links a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    background-color: #e9ecef;
+  }
+  
+  .search-bar {
+    margin-left: 1rem;
+  }
+  
+  main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-left: 1rem;
+  }
+  
+  .footer-links a {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      margin-top: 1rem;
+    }
+  
+    .search-bar {
+      margin-left: 0;
+      margin-top: 1rem;
+      width: 100%;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-links {
+      margin-top: 1rem;
+      justify-content: center;
+    }
+  }
