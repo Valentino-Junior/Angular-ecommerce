@@ -1,21 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-interface CartItem {
-  id: number;
-  title: string;
-  price: number;
-  quantity: number;
-}
+import { Product, CartItem } from '../interfaces/product.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  updateQuantity(productId: number, quantity: number) {
-    throw new Error('Method not implemented.');
-  }
   private cartItems = new BehaviorSubject<CartItem[]>([]);
 
   constructor() {}
@@ -24,27 +15,31 @@ export class CartService {
     return this.cartItems.asObservable();
   }
 
-  addToCart(product: any): void {
+  addToCart(product: Product): void {
     const currentItems = this.cartItems.getValue();
-    const existingItem = currentItems.find(item => item.id === product.id);
+    const existingItem = currentItems.find(item => item.product.id === product.id);
 
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
-      currentItems.push({
-        id: product.id,
-        title: product.title,
-        price: product.price,
-        quantity: 1
-      });
+      currentItems.push({ product, quantity: 1 });
     }
 
     this.cartItems.next(currentItems);
   }
 
+  updateQuantity(productId: number, quantity: number): void {
+    const currentItems = this.cartItems.getValue();
+    const updatedItems = currentItems.map(item => 
+      item.product.id === productId ? { ...item, quantity: quantity } : item
+    ).filter(item => item.quantity > 0);
+
+    this.cartItems.next(updatedItems);
+  }
+
   removeFromCart(productId: number): void {
     const currentItems = this.cartItems.getValue();
-    const updatedItems = currentItems.filter(item => item.id !== productId);
+    const updatedItems = currentItems.filter(item => item.product.id !== productId);
     this.cartItems.next(updatedItems);
   }
 
@@ -54,7 +49,7 @@ export class CartService {
 
   getTotalPrice(): Observable<number> {
     return this.cartItems.asObservable().pipe(
-      map(items => items.reduce((total, item) => total + item.price * item.quantity, 0))
+      map(items => items.reduce((total, item) => total + item.product.price * item.quantity, 0))
     );
   }
 }
