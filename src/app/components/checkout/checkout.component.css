@@ -1,0 +1,180 @@
+.checkout-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkout-container h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group:nth-last-child(2),
+  .form-group:last-child {
+    grid-column: span 2;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  input {
+    padding: 0.8rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+  }
+  
+  input.ng-invalid.ng-touched {
+    border-color: #ef4444;
+  }
+  
+  .order-summary {
+    grid-column: span 2;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+  
+  .order-summary h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .order-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .order-summary li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #666;
+  }
+  
+  .order-summary li:last-child {
+    border-bottom: none;
+  }
+  
+  .total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e0e0e0;
+    font-weight: bold;
+    color: #2563eb;
+    font-size: 1.2rem;
+  }
+  
+  button[type="submit"] {
+    grid-column: span 2;
+    padding: 1rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background: #1d4ed8;
+  }
+  
+  button[type="submit"]:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+  }
+  
+  /* Error messages */
+  .error-message {
+    font-size: 0.8rem;
+    color: #ef4444;
+    margin-top: 0.25rem;
+  }
+  
+  /* Animation for error state */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  input.ng-invalid.ng-touched {
+    animation: shake 0.2s ease-in-out;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .checkout-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+  
+    form {
+      grid-template-columns: 1fr;
+    }
+  
+    .form-group,
+    .order-summary,
+    button[type="submit"] {
+      grid-column: span 1;
+    }
+  
+    .checkout-container h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Loading state */
+  .loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
+  /* Success message */
+  .success-message {
+    text-align: center;
+    color: #22c55e;
+    background: #f0fdf4;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
