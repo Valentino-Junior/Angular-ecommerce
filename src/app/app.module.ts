@@ -15,6 +15,8 @@ import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
 import { SearchComponent } from './components/search/search.component';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { CategoryDetailComponent } from './components/category-detail/category-d
     AppRoutingModule,
     HttpClientModule,
     GraphQLModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [ProductService, CartService],
   bootstrap: [AppComponent]
