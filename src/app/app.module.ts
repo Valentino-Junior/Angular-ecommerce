@@ -15,7 +15,6 @@ import { OrderSuccessComponent } from './components/order-success/order-success.
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
 import { SearchComponent } from './components/search/search.component';
-import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -29,7 +28,6 @@ import { MatIconModule } from '@angular/material/icon';
     CheckoutComponent,
     OrderSuccessComponent,
     SearchComponent,
-    CategoryDetailComponent
   ],
   imports: [
     BrowserModule,

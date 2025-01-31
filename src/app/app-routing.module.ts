@@ -6,14 +6,12 @@ import { CartComponent } from "./components/cart/cart.component"
 import { CheckoutComponent } from "./components/checkout/checkout.component"
 import { OrderSuccessComponent } from "./components/order-success/order-success.component"
 import { CategoryListComponent } from "./components/category-list/category-list.component"
-import { CategoryDetailComponent } from "./components/category-detail/category-detail.component"
 
 const routes: Routes = [
   { path: "", redirectTo: "/products", pathMatch: "full" },
   { path: "products", component: ProductListComponent },
   { path: "product/:id", component: ProductDetailComponent },
   { path: "categories", component: CategoryListComponent },
-  { path: "category/:id", component: CategoryDetailComponent },
   { path: "cart", component: CartComponent },
   { path: "checkout", component: CheckoutComponent },
   { path: "order-success", component: OrderSuccessComponent },
