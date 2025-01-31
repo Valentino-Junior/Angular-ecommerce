@@ -1,32 +1,5 @@
-<div class="product-list-container">
-    <div class="filters">
-      <h3>Filters</h3>
-      <div class="category-filter">
-        <label for="category">Category:</label>
-        <select id="category" [(ngModel)]="selectedCategory" (change)="onCategoryChange($event.target.value)">
-          <option value="">All Categories</option>
-          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-        </select>
-      </div>
-      <div class="price-filter">
-        <label for="min-price">Min Price:</label>
-        <input type="number" id="min-price" [(ngModel)]="priceRange.min" (change)="onPriceRangeChange()">
-        <label for="max-price">Max Price:</label>
-        <input type="number" id="max-price" [(ngModel)]="priceRange.max" (change)="onPriceRangeChange()">
-      </div>
-    </div>
-    
-    <div class="sort">
-      <label for="sort">Sort by:</label>
-      <select id="sort" [(ngModel)]="selectedSort" (change)="onSortChange($event.target.value)">
-        <option value="">Default</option>
-        <option value="price_asc">Price: Low to High</option>
-        <option value="price_desc">Price: High to Low</option>
-        <option value="name_asc">Name: A to Z</option>
-        <option value="name_desc">Name: Z to A</option>
-      </select>
-    </div>
-  
+<div class="product-list">
+    <h2>Products</h2>
     <div class="product-grid">
       <div *ngFor="let product of products" class="product-card">
         <img [src]="product.images[0]" [alt]="product.title">
