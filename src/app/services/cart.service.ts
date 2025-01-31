@@ -13,6 +13,9 @@ interface CartItem {
   providedIn: 'root'
 })
 export class CartService {
+  updateQuantity(productId: number, quantity: number) {
+    throw new Error('Method not implemented.');
+  }
   private cartItems = new BehaviorSubject<CartItem[]>([]);
 
   constructor() {}
