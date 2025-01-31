@@ -14,6 +14,7 @@ import { OrderSuccessComponent } from './components/order-success/order-success.
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
 import { SearchComponent } from './components/search/search.component';
+import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchComponent } from './components/search/search.component';
     CartComponent,
     CheckoutComponent,
     OrderSuccessComponent,
-    SearchComponent
+    SearchComponent,
+    CategoryDetailComponent
   ],
   imports: [
     BrowserModule,
