@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Product, Category } from '../interfaces/product.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +9,8 @@ import { Product, Category } from '../interfaces/product.interface';
 export class ProductService {
   constructor(private apollo: Apollo) {}
 
-  getProducts(): Observable<Product[]> {
-    return this.apollo.watchQuery<{ products: Product[] }>({
+  getProducts(): Observable<any[]> {
+    return this.apollo.watchQuery<any>({
       query: gql`
         query GetProducts {
           products {
@@ -31,8 +30,8 @@ export class ProductService {
     .valueChanges.pipe(map(result => result.data.products));
   }
 
-  getCategories(): Observable<Category[]> {
-    return this.apollo.watchQuery<{ categories: Category[] }>({
+  getCategories(): Observable<any[]> {
+    return this.apollo.watchQuery<any>({
       query: gql`
         query GetCategories {
           categories {
@@ -46,8 +45,8 @@ export class ProductService {
     .valueChanges.pipe(map(result => result.data.categories));
   }
 
-  getProductById(id: number): Observable<Product> {
-    return this.apollo.watchQuery<{ product: Product }>({
+  getProductById(id: number): Observable<any> {
+    return this.apollo.watchQuery<any>({
       query: gql`
         query GetProduct($id: ID!) {
           product(id: $id) {
