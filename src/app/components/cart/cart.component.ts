@@ -1,3 +1,4 @@
+// cart.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Observable } from 'rxjs';
