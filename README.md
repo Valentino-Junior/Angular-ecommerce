@@ -186,8 +186,3 @@ The project uses modern CSS features:
 ## License
 
 This project is licensed under the MIT License.
-
-## Contact
-
-Your Name - your.email@example.com
-Project Link: [https://github.com/yourusername/angular-ecommerce](https://github.com/yourusername/angular-ecommerce)
