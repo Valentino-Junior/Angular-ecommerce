@@ -4,7 +4,6 @@
       <div *ngFor="let category of categories$ | async" class="category-card">
         <img [src]="category.image" [alt]="category.name">
         <h3>{{ category.name }}</h3>
-        <a [routerLink]="['/category', category.id]">View Products</a>
       </div>
     </div>
   </div>
