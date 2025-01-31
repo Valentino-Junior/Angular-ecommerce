@@ -56,3 +56,8 @@
     font-size: 1.2rem;
     margin-bottom: 0.2rem;
   }
+
+  .nav-links a mat-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
