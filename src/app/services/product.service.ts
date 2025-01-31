@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -12,11 +12,11 @@ export class ProductService {
 
   constructor(private apollo: Apollo) {}
 
-  getProducts(searchTerm: string = ''): Observable<any[]> {
+  getProducts(): Observable<any[]> {
     return this.apollo.watchQuery<any>({
       query: gql`
-        query GetProducts($searchTerm: String) {
-          products(where: { title_contains: $searchTerm }) {
+        query GetProducts {
+          products {
             id
             title
             price
@@ -28,8 +28,7 @@ export class ProductService {
             images
           }
         }
-      `,
-      variables: { searchTerm }
+      `
     })
     .valueChanges.pipe(map(result => result.data.products));
   }
@@ -53,7 +52,7 @@ export class ProductService {
     return this.apollo.watchQuery<any>({
       query: gql`
         query GetProduct($id: ID!) {
-          product(where: { id: $id }) {
+          product(id: $id) {
             id
             title
             price
