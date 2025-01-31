@@ -1,1 +1,13 @@
-<p>category-detail works!</p>
+<div class="category-detail">
+    <h2>Products in Category</h2>
+    <div class="product-grid">
+      <div *ngFor="let product of products$ | async" class="product-card">
+        <img [src]="product.images[0]" [alt]="product.title">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.price | currency }}</p>
+        <a [routerLink]="['/product', product.id]">View Details</a>
+      </div>
+    </div>
+  </div>
+  
+  
