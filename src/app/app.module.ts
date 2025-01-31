@@ -13,6 +13,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { OrderSuccessComponent } from './components/order-success/order-success.component';
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CartService } from './services/cart.service';
     CategoryListComponent,
     CartComponent,
     CheckoutComponent,
-    OrderSuccessComponent
+    OrderSuccessComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
