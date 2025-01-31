@@ -1,9 +1,12 @@
 <div class="category-list">
     <h2>Categories</h2>
     <div class="category-grid">
-      <div *ngFor="let category of categories" class="category-card">
+      <div *ngFor="let category of categories$ | async" class="category-card">
         <img [src]="category.image" [alt]="category.name">
         <h3>{{ category.name }}</h3>
+        <a [routerLink]="['/category', category.id]">View Products</a>
       </div>
     </div>
   </div>
+  
+  
